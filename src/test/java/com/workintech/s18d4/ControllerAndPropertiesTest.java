@@ -211,7 +211,7 @@ class ControllerAndPropertiesTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(sampleCustomerForCustomerControllerTest)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is((int) expectedResponse.id())))
+                .andExpect(jsonPath("$.id", is((long) expectedResponse.id())))
                 .andExpect(jsonPath("$.email", is(expectedResponse.email())))
                 .andExpect(jsonPath("$.salary", is(expectedResponse.salary())));
 
